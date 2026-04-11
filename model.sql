@@ -36,15 +36,16 @@ CREATE TABLE usuario (
     telefone VARCHAR(9),
     bairro VARCHAR(150),
     endereco VARCHAR(150),
-    dt_cadastro DATE DEFAULT CURRENT_DATE
+    dt_cadastro DATE DEFAULT CURRENT_DATE,
+    ativo BOOLEAN DEFAULT TRUE
 );
 
 CREATE TABLE emprestimo (
     id SERIAL PRIMARY KEY,
     usuario_id INT REFERENCES usuario(id),
     livro_id INT REFERENCES livro(id),
-    dt_emprestimo DATE DEFAULT CURRENT_DATE,
-    dt_devolicao DATE NOT NULL,
-    dt_devolvido DATE,
+    dt_emprestimo TIMESTAMP DEFAULT CURRENT_DATE,
+    dt_devolucao DATE NOT NULL,
+    dt_devolvido TIMESTAMP,
     estado VARCHAR(20) CHECK (estado IN ('regular', 'renovado', 'devolvido', 'atrasado'))
 );
