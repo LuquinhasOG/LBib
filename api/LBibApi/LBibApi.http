@@ -1,0 +1,6 @@
+@LBibApi_HostAddress = http://localhost:5082
+
+GET {{LBibApi_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
