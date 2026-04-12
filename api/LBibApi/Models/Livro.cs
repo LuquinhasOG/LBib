@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace LBibApi.Models
 {
     [Table("livro")]
-    public class LivroModel
+    public class Livro
     {
         [Key]
         [Column("id")]
