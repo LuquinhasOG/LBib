@@ -1,9 +1,10 @@
 ﻿using LBibApi.Infra;
 using LBibApi.Models;
+using LBibApi.Repositories.Interfaces;
 
 namespace LBibApi.Repositories
 {
-    public class EmprestimoRepository
+    public class EmprestimoRepository : IEmprestimoRepository
     {
         private readonly ConnectionContext Context = new ConnectionContext();
 
@@ -20,7 +21,7 @@ namespace LBibApi.Repositories
 
         public Emprestimo GetById(int id)
         {
-            return Context.Emprestimos.Find(e => e.Id == id);
+            return Context.Emprestimos.Find(id);
         }
     }
 }

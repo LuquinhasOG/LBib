@@ -1,9 +1,10 @@
 ﻿using LBibApi.Infra;
 using LBibApi.Models;
+using LBibApi.Repositories.Interfaces;
 
 namespace LBibApi.Repositories
 {
-    public class UsuarioRepository
+    public class UsuarioRepository : IUsuarioRepository
     {
         private readonly ConnectionContext Context = new ConnectionContext();
 
@@ -20,7 +21,7 @@ namespace LBibApi.Repositories
 
         public Usuario GetById(int id)
         {
-            return Context.Usuarios.Find(u => u.Id == id);
+            return Context.Usuarios.Find(id);
         }
     }
 }

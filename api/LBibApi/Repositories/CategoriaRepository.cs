@@ -1,9 +1,10 @@
 ﻿using LBibApi.Infra;
 using LBibApi.Models;
+using LBibApi.Repositories.Interfaces;
 
 namespace LBibApi.Repositories
 {
-    public class CategoriaRepository
+    public class CategoriaRepository : ICategoriaRepository
     {
         private readonly ConnectionContext Context = new ConnectionContext();
 
@@ -20,7 +21,7 @@ namespace LBibApi.Repositories
 
         public Categoria GetById(int id)
         {
-            return Context.Categorias.Find(c => c.Id == id );
+            return Context.Categorias.Find(id);
         }
     }
 }

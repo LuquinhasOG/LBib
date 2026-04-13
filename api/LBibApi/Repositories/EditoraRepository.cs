@@ -1,9 +1,10 @@
 ﻿using LBibApi.Infra;
 using LBibApi.Models;
+using LBibApi.Repositories.Interfaces;
 
 namespace LBibApi.Repositories
 {
-    public class EditoraRepository
+    public class EditoraRepository : IEditoraRepository
     {
         private readonly ConnectionContext Context = new ConnectionContext();
 
@@ -20,7 +21,7 @@ namespace LBibApi.Repositories
 
         public Editora GetById(int id)
         {
-            return Context.Editoras.Find(e => e.Id == id);
+            return Context.Editoras.Find(id);
         }
     }
 }

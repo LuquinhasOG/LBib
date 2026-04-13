@@ -1,9 +1,10 @@
 ﻿using LBibApi.Infra;
 using LBibApi.Models;
+using LBibApi.Repositories.Interfaces;
 
 namespace LBibApi.Repositories
 {
-    public class AutorRepository
+    public class AutorRepository : IAutorRepository
     {
         private readonly ConnectionContext Context = new ConnectionContext();
 
@@ -18,9 +19,9 @@ namespace LBibApi.Repositories
             return Context.Autores.ToList();
         }
 
-        public Categoria GetById(int id)
+        public Autor GetById(int id)
         {
-            return Context.Autores.Find(a => a.Id == id);
+            return Context.Autores.Find(id);
         }
     }
 }
