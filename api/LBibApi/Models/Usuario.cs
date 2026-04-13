@@ -17,7 +17,7 @@ namespace LBibApi.Models
         public string Email { get; set; }
 
         [Column("ddd")]
-        public int DDDTelefone { get; set; }
+        public string DDDTelefone { get; set; }
 
         [Column("telefone")]
         public string? Telefone { get; set; }
@@ -33,5 +33,17 @@ namespace LBibApi.Models
 
         [Column("ativo")]
         public bool Ativo { get; set; }
+
+        public Usuario(string nome, string email, string dDDTelefone, string? telefone, string? bairro, string? endereco, DateOnly dataCadastro)
+        {
+            Nome = nome;
+            Email = email;
+            DDDTelefone = dDDTelefone;
+            Telefone = telefone;
+            Bairro = bairro;
+            Endereco = endereco;
+            DataCadastro = dataCadastro;
+            Ativo = true;
+        }
     }
 }

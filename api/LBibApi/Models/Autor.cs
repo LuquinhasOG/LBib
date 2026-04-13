@@ -15,5 +15,11 @@ namespace LBibApi.Models
 
         [Column("nacionalidade")]
         public string Nacionalidade { get; set; }
+
+        public Autor(string nome, string nacionalidade)
+        {
+            Nome = nome;
+            Nacionalidade = nacionalidade;
+        }
     }
 }

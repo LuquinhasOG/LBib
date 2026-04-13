@@ -15,5 +15,11 @@ namespace LBibApi.Models
 
         [Column("endereco")]
         public string? Endereco { get; set; }
+
+        public Editora(string nome, string? endereco)
+        {
+            Nome = nome;
+            Endereco = endereco;
+        }
     }
 }

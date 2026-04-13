@@ -27,5 +27,14 @@ namespace LBibApi.Models
 
         [Column("livro_id")]
         public int IdLivro { get; set; }
+
+        public Emprestimo(DateTime dataEmprestimo, DateOnly dataDevolucao, string estado, int idUsuario, int idLivro)
+        {
+            DataEmprestimo = dataEmprestimo;
+            DataDevolucao = dataDevolucao;
+            Estado = estado;
+            IdUsuario = idUsuario;
+            IdLivro = idLivro;
+        }
     }
 }

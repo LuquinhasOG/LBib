@@ -17,10 +17,10 @@ namespace LBibApi.Models
         public string? ISBN { get; set; }
 
         [Column("edicao")]
-        public string? Edicao { get; set; }
+        public int Edicao { get; set; }
 
         [Column("ano_publicacao")]
-        public string? ano_publicacao { get; set; }
+        public int AnoPublicacao { get; set; }
 
         [Column("sinopse")]
         public string? Sinopse { get; set; }
@@ -36,5 +36,18 @@ namespace LBibApi.Models
 
         [Column("autor_id")]
         public int IdAutor{ get; set; }
+
+        public Livro(string titulo, string? iSBN, int edicao, int anoPublicacao, string? sinopse, int quantidadeTotal, int quantidadeDisponivel, int idEditora, int idAutor)
+        {
+            Titulo = titulo;
+            ISBN = iSBN;
+            Edicao = edicao;
+            AnoPublicacao = anoPublicacao;
+            Sinopse = sinopse;
+            QuantidadeTotal = quantidadeTotal;
+            QuantidadeDisponivel = quantidadeDisponivel;
+            IdEditora = idEditora;
+            IdAutor = idAutor;
+        }
     }
 }
