@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LBibApi.Infra
 {
-    public class ConectionContext : DbContext
+    public class ConnectionContext : DbContext
     {
         public DbSet<Autor> Autores { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
