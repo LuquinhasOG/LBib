@@ -1,6 +1,7 @@
 ﻿using LBibApi.Models;
 using LBibApi.Repositories.Interfaces;
 using LBibApi.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace LBibApi.Controllers
@@ -16,6 +17,7 @@ namespace LBibApi.Controllers
             _emprestimoRepository = emprestimoRepository;
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Add(EmprestimoViewModel emprestimoView)
         {
@@ -27,12 +29,14 @@ namespace LBibApi.Controllers
             return Ok();
         }
 
+        [Authorize]
         [HttpGet]
         public IActionResult GetAll()
         {
             return Ok(_emprestimoRepository.GetAll());
         }
 
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {

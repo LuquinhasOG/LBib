@@ -9,6 +9,7 @@ namespace LBibApi.Infra
         public DbSet<Categoria> Categorias { get; set; }
         public DbSet<Editora> Editoras { get; set; }
         public DbSet<Emprestimo> Emprestimos { get; set; }
+        public DbSet<Funcionario> Funcionarios { get; set; }
         public DbSet<Livro> Livros { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
 
