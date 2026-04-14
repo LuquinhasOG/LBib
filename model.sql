@@ -1,3 +1,12 @@
+CREATE TABLE funcionario (
+    id SERIAL PRIMARY KEY,
+    nome VARCHAR(150) NOT NULL,
+    usuario VARCHAR(30) NOT NULL UNIQUE,
+    senha TEXT NOT NULL,
+    ativo BOOLEAN NOT NULL DEFAULT TRUE,
+    permissao INT NOT NULL DEFAULT 1
+);
+
 CREATE TABLE categoria (
     id SERIAL PRIMARY KEY,
     nome VARCHAR(100) NOT NULL UNIQUE
